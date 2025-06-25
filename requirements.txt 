@@ -1,0 +1,2 @@
+# Production dependencies only - exact versions will be added after installation
+# This file will contain only runtime dependencies (no dev tools)rm -rf venv

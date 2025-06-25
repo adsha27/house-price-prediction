@@ -15,6 +15,31 @@ Advanced machine learning system for house price prediction across multiple data
 ## Project Status
 🚧 **In Development** - Building professional ML portfolio project
 
+## Requirements & Setup
+
+### Prerequisites
+- Python 3.11.0+
+- Git
+
+### Environment Setup
+```bash
+# 1. Clone repository
+git clone https://github.com/adsha27pip/house-price-prediction.git
+cd house-price-prediction
+
+# 2. Create virtual environment
+python3.11 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# 3. Upgrade pip
+pip install --upgrade pip
+
+# 4. Install dependencies
+pip install -r requirements.txt
+
+# 5. Verify installation
+python -c "import pandas, sklearn, xgboost; print('✅ Environment ready!')"
+
 ## Technology Stack
 - **ML/Data:** Python, scikit-learn, XGBoost, LightGBM, CatBoost
 - **Analysis:** Pandas, NumPy, SHAP, Matplotlib, Seaborn
