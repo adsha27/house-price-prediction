@@ -24,7 +24,7 @@ Advanced machine learning system for house price prediction across multiple data
 ### Environment Setup
 ```bash
 # 1. Clone repository
-git clone https://github.com/adsha27pip/house-price-prediction.git
+git clone https://github.com/adsha27/house-price-prediction.git
 cd house-price-prediction
 
 # 2. Create virtual environment
