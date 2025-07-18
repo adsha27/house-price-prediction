@@ -1,7 +1,7 @@
 # House Price Prediction - Production ML System
 
 ## Project Overview
-Advanced machine learning system for house price prediction across multiple datasets (California, Ames, Boston Housing). Demonstrates production-ready ML engineering with comprehensive model comparison, feature engineering, and deployment capabilities.
+Advanced machine learning system for house price prediction across multiple datasets (e.g., California, Ames). Demonstrates production-ready ML engineering with comprehensive model comparison, feature engineering, and deployment capabilities.
 
 ## Key Features
 - Multi-dataset analysis and comparison
