@@ -40,6 +40,12 @@ pip install -r requirements.txt
 # 5. Verify installation
 python -c "import pandas, sklearn, xgboost; print('✅ Environment ready!')"
 
+### Data Setup
+This project uses two primary datasets: California Housing (included with scikit-learn) and Ames Housing. The Ames Housing dataset must be downloaded manually.
+
+1.  Download the training data from the [Kaggle "House Prices - Advanced Regression Techniques" competition](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data).
+2.  Place this file in the `data/raw/` directory and rename it to `AmesHousing.csv`.
+
 ## Technology Stack
 - **ML/Data:** Python, scikit-learn, XGBoost, LightGBM, CatBoost
 - **Analysis:** Pandas, NumPy, SHAP, Matplotlib, Seaborn

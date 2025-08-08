@@ -1,7 +1,7 @@
 import pytest
 import pandas as pd
-
-from src.data.loaders import CaliforniaHousingLoader
+from unittest.mock import patch
+from src.data.loaders import CaliforniaHousingLoader, AmesHousingLoader
 
 class TestCaliforniaHousingLoader:
     def test_load_returns_dataframe(self):
@@ -9,10 +9,32 @@ class TestCaliforniaHousingLoader:
         loader = CaliforniaHousingLoader()
         result = loader.load()
         assert isinstance(result, pd.DataFrame)
-    
-    def test_dataframe_not_empty(self):
-        """test that DataFrame has data"""
-        loader = CaliforniaHousingLoader()
-        df = loader.load()
-        assert len(df) > 0
-        assert len(df.columns) > 0
+        assert not result.empty
+
+
+class TestAmesHousingLoader:
+    def test_load_returns_dataframe(self, tmp_path):
+        #dummy for test
+        d = tmp_path / "data/raw"
+        d.mkdir(parents=True)
+        p = d / "AmesHousing.csv"
+        p.write_text("Id,SalePrice\n1,200000")
+
+        with patch('src.data.loaders.AmesHousingLoader.DATA_PATH', p):
+            loader = AmesHousingLoader()
+            result = loader.load()
+            assert isinstance(result, pd.DataFrame)
+            assert not result.empty
+
+    def test_renames_saleprice_column(self, tmp_path):
+        """ testing renaming of the SalePrice Column"""
+        d = tmp_path / "data/raw"
+        d.mkdir(parents=True)
+        p = d / "AmesHousing.csv"
+        p.write_text("Id,SalePrice\n1,200000")
+
+        with patch('src.data.loaders.AmesHousingLoader.DATA_PATH', p):
+            loader = AmesHousingLoader()
+            df = loader.load()
+            assert 'price' in df.columns
+            assert 'SalePrice' not in df.columns
