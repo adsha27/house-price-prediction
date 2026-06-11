@@ -1,56 +1,24 @@
-# House Price Prediction - Production ML System
+# House Price Prediction
 
-## Project Overview
-Advanced machine learning system for house price prediction across multiple datasets (e.g., California, Ames). Demonstrates production-ready ML engineering with comprehensive model comparison, feature engineering, and deployment capabilities.
+ML pipeline for predicting house prices on the Ames Housing dataset. Covers EDA, feature engineering, and comparison of multiple regression algorithms with SHAP-based interpretability.
 
-## Key Features
-- Multi-dataset analysis and comparison
-- Advanced feature engineering pipeline
-- 8+ regression algorithm comparison
-- SHAP-based model interpretability
-- Interactive Streamlit web application
-- REST API with FastAPI
-- Comprehensive testing and documentation
+## What it covers
 
-## Project Status
-🚧 **In Development** - Building professional ML portfolio project
+- EDA with missing value heatmaps and correlation analysis
+- Feature engineering pipeline (categorical encoding, skew correction, interaction features)
+- Model comparison: Linear, Ridge, XGBoost, LightGBM, CatBoost, stacking ensembles
+- SHAP values for feature importance and prediction explanation
 
-## Requirements & Setup
+## Setup
 
-### Prerequisites
-- Python 3.11.0+
-- Git
-
-### Environment Setup
 ```bash
-# 1. Clone repository
 git clone https://github.com/adsha27/house-price-prediction.git
 cd house-price-prediction
-
-# 2. Create virtual environment
-python3.11 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# 3. Upgrade pip
-pip install --upgrade pip
-
-# 4. Install dependencies
 pip install -r requirements.txt
+```
 
-# 5. Verify installation
-python -c "import pandas, sklearn, xgboost; print('✅ Environment ready!')"
+Data: download `train.csv` from the [Kaggle House Prices competition](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data) and place it in `data/raw/AmesHousing.csv`. California Housing (sklearn built-in) works without any download.
 
-### Data Setup
-This project uses two primary datasets: California Housing (included with scikit-learn) and Ames Housing. The Ames Housing dataset must be downloaded manually.
+## Stack
 
-1.  Download the training data from the [Kaggle "House Prices - Advanced Regression Techniques" competition](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data).
-2.  Place this file in the `data/raw/` directory and rename it to `AmesHousing.csv`.
-
-## Technology Stack
-- **ML/Data:** Python, scikit-learn, XGBoost, LightGBM, CatBoost
-- **Analysis:** Pandas, NumPy, SHAP, Matplotlib, Seaborn
-- **Deployment:** Streamlit, FastAPI, Docker
-- **Testing:** Pytest, Type hints with mypy
-
-## Business Impact
-Target: Demonstrate $500K+ annual impact potential through accurate price predictions and actionable insights.
+Python, scikit-learn, XGBoost, LightGBM, CatBoost, SHAP, pandas, Matplotlib
